@@ -118,29 +118,34 @@ form {
 
 .topmovie {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     width: 80%;
     max-width: 1500px;
-    height: 445px;
+    max-height: 545px;
     border: solid 3px #cc8a52;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 15px;
+
+}
+
+.topmoviecontainer {
+    display:flex;
+    flex-direction:row;
 }
 
 .topmovieposter {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    width: 40%;
+    justify-content:flex-end;
+    width: 100%;
     max-width: 300px;
     min-width: 200px;
-    height: auto;
+    height: 445px;
     max-height: 445px;
     background: url('https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg');
     background-repeat: no-repeat;
     background-size: contain;
-    border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
 }
 
@@ -154,9 +159,22 @@ form {
     justify-content: center;
 }
 
-.topmovieratings p {
-    text-align: center;
+.topmovieratings table{
+    display:flex;
+    flex-direction:row;
+    width: 100%;
+    height: 100px;
+    justify-content: space-evenly;
+    
 }
+
+.topmovieratings table tr td {
+        text-align: center;
+        padding: 0 10px 0 10px
+}
+
+
+
 
 .top10 {
     display: flex;
@@ -200,4 +218,10 @@ form {
 
 footer {
 
+}
+
+.imdbicon{
+   width: 150px;
+   height: 75px;
+   background: url(../Images/imdb.png);
 }
