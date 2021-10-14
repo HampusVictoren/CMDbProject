@@ -35,6 +35,10 @@ header {
     background: rgba(255, 255, 255, 0.2);
     margin-bottom: 20px;
 }
+.searchicon{
+    display: none;
+    
+}
 
 h1 {
     font-weight: normal;
@@ -254,6 +258,10 @@ footer {
 }
 
 @media screen and (max-width:900px){
+    h2 {
+        margin-top: 0;
+    }
+
     .top10movie {
         width: 290px;
         height: 170px
@@ -273,18 +281,35 @@ footer {
 
    
 }
-@media screen and (max-width:440px){
-    .actors{
+@media screen and (max-width:600px) {
+    header form{
         display:none;
     }
-    .director{
-        display: none;
-    }
-    .topmovieratings table{
-        
-        justify-content:center;
-    }
-    .topmovieratings .imdbicon{
-        margin: 0 5px 0 5px
-    }
+
+
 }
+@media screen and (max-width:440px) {
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h5 {
+            font-size: 1.6rem;
+        }
+
+        .actors {
+            display: none;
+        }
+
+        .director {
+            display: none;
+        }
+
+        .topmovieratings table {
+            justify-content: center;
+        }
+
+        .topmovieratings .imdbicon {
+            margin: 0 5px 0 5px
+        }
+    }
