@@ -1,6 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
-
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap%27');
+ 
+*{
     margin: 0;
     padding: 0;
 }
@@ -24,7 +25,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 15px;
+    
     padding-bottom: 15px;
     width: 80%;
     max-width: 1500px;
@@ -37,6 +38,15 @@ header {
 }
 .searchicon{
     display: none;
+    background: url('../Images/search.svg');
+    background-size:70%;
+    background-position:center;
+    background-repeat:no-repeat;
+    height: 50px;
+    aspect-ratio: 1;
+    margin-right: 25px;
+    
+    
     
 }
 
@@ -44,6 +54,7 @@ h1 {
     font-weight: normal;
     width: 10%;
     color: white;
+    padding: 0;
 }
 
 h2 {
@@ -68,6 +79,13 @@ h5 {
     color: white;
     font-size: 2rem;
     margin-top: 20px;
+    
+}
+
+p {
+    font-family: 'Roboto';
+    margin-bottom:5px;
+
 }
 
 main {
@@ -79,6 +97,7 @@ main {
 .logo {
     margin-left: 25px;
     width: 100px;
+    padding-top: 15px;
 }
 
 .spacer {
@@ -95,6 +114,7 @@ form {
     display: flex;
     justify-content: center;
     width: 60%;
+    padding-top: 15px;
 }
 
     .search input {
@@ -107,6 +127,7 @@ form {
         background: rgba(255, 255, 255, 0.9);
         font-size: 1.4rem;
         padding-left: 10px;
+        
     }
 
     .search button {
@@ -227,6 +248,8 @@ form {
 }
 
 footer {
+    margin: 20px 5px 0 20px;
+    font-size: 1rem;
 
 }
 
@@ -255,6 +278,11 @@ footer {
         width: 350px;
         height: 190px;
     }
+    .top10rating .imdbicon {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px 0 10px;
+    }
 }
 
 @media screen and (max-width:900px){
@@ -273,17 +301,31 @@ footer {
         margin-bottom: 0
     }
 
-    .top10rating .imdbicon {
-        width: 40px;
-        height: 40px;
-        margin: 0 10px 0 10px;
+   
+    footer{
+        font-size:0.8rem;
     }
 
    
 }
 @media screen and (max-width:600px) {
-    header form{
-        display:none;
+    header {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        width:100%;
+        border-radius:0;
+        border-right: 0;
+        border-left: 0;
+    }
+    
+    header form {
+        display: none;
+    }
+    .searchicon{
+        display:block;
+    }
+    .logo {
+        padding-top: 5px;
     }
 
 
@@ -312,4 +354,8 @@ footer {
         .topmovieratings .imdbicon {
             margin: 0 5px 0 5px
         }
+    footer {
+        font-size: 0.7rem;
+    }
+       
     }
