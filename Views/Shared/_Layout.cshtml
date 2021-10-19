@@ -8,21 +8,31 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>CMDb</h1>
-        </div>
-        <div class="search">
-            <form action="javascript:void(0)">
+    <div class="maincontainer">
+        <header>
+            <div class="logo">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><h1>CMDb</h1></a>
+            </div>
+            <div class="search">
+                <form action="javascript:void(0)">
+                    <input type="text" />
+                    <button type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+            <div class="spacer"></div>
+            <a href="javascript:void(0)" onclick="showMobileSearch()"><div class="searchicon"></div></a>
+        </header>
+        <div class="mobilesearch">
+            <form class="searchformmobile">
+                <a href="javascript:void(0)" onclick="showMobileSearch()" class="backbutton"><</a>
                 <input type="text" />
                 <button type="submit">
                     Search
                 </button>
             </form>
         </div>
-        <div class="spacer"></div>
-        <div class="searchicon"></div>
-    </header>
         <main>
             @RenderBody()
         </main>
@@ -30,10 +40,11 @@
         <footer>
             Created by Anton Svedin and Hampus Victorén. All your base are belong to us.
         </footer>
-    
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
 </body>
 </html>

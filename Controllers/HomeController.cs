@@ -23,7 +23,7 @@ namespace CMDb___project.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Details()
         {
             return View();
         }
