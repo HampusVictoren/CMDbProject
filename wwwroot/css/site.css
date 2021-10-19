@@ -215,18 +215,12 @@ form {
 }
 
 .topmovieposter {
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
     width: 20vw;
     max-width: 300px;
     min-width: 125px;
     height: 30vw;
     max-height: 445px;
     min-height: 226px;
-    background: url('https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
     border-top-left-radius: 15px;
 }
 

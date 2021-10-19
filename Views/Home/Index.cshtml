@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<MovieViewModel>
+
+@{
     ViewData["Title"] = "Home";
 }
 
@@ -6,17 +8,17 @@
 <div class="topmovie">
     <div class="topmoviecontainer">
         <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
-            <div class="topmovieposter"></div>
+            <img class="topmovieposter" src="@Model[0].Poster" />
         </a>
         <div class="topmovietext">
             <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
                 <h3>
-                    Cast Away (2000)
+                    @Model[0].Title
                 </h3>
             </a>
-            <p class="plot">"A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."</p>
-            <p class="actors">Actors: Tom Hanks, Helen Hunt, Paul Sanchez</p>
-            <p class="director">Director: Robert Zemeckis</p>
+            <p class="plot">@Model[0].Plot</p>
+            <p class="actors">Actors: @Model[0].Actors</p>
+            <p class="director">Director: @Model[0].Director</p>
         </div>
 </div>
     <div class="topmovieratings">
@@ -51,44 +53,41 @@
     
     <div class="top10">
         <div class="top10movie">
-            <div class="top10poster"></div>
+            <img class="top10poster" src="@Model[1].Poster" />
             <div class="top10text">
-                <h4>Cast Away (2000)</h4>
+                <h4>@Model[1].Title</h4>
                 <p>
-                    "A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."
+                    @Model[1].Plot
                 </p>
                 <div class="top10rating">
-                    <div class="imdbicon"></div> 8.3
+                    <div class="imdbicon"></div> @Model[1].IMDbRating
                 </div>
             </div>
-            
         </div>
 
         <div class="top10movie">
-            <div class="top10poster"></div>
+            <img class="top10poster" src="@Model[2].Poster" />
             <div class="top10text">
-                <h4>Cast Away (2000)</h4>
+                <h4>@Model[2].Title</h4>
                 <p>
-                    "A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."
+                    @Model[2].Plot
                 </p>
                 <div class="top10rating">
-                    <div class="imdbicon"></div> 8.3
+                    <div class="imdbicon"></div> @Model[2].IMDbRating
                 </div>
             </div>
-
         </div>
 
         <div class="top10movie">
-            <div class="top10poster"></div>
+            <img class="top10poster" src="@Model[3].Poster" />
             <div class="top10text">
-                <h4>Cast Away (2000)</h4>
+                <h4>@Model[3].Title</h4>
                 <p>
-                    "A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."
+                    @Model[3].Plot
                 </p>
                 <div class="top10rating">
-                    <div class="imdbicon"></div> 8.3
+                    <div class="imdbicon"></div> @Model[3].IMDbRating
                 </div>
             </div>
-
         </div>
     </div>

@@ -20,7 +20,13 @@ namespace CMDb___project.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            MovieViewModel movieViewModel = new MovieViewModel();
+
+            var movies = movieViewModel.GetMovieList();
+
+            ViewData["movies"] = movies;
+
+            return View(movies);
         }
 
         public IActionResult Details()
