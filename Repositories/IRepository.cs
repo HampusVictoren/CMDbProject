@@ -10,7 +10,7 @@ namespace CMDb___project.Repositories
     public interface IRepository
     {
         /// <Movie>
-        /// Retrieves a covid Movie
+        /// Retrieves a Movie
         /// </Movie>
         /// <returns></returns>
         Task<GetMovieDto[]> GetCmdbMoviesAsync();

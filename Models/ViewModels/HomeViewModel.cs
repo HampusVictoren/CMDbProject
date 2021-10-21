@@ -10,19 +10,24 @@ namespace CMDb___project.Models.ViewModels
 {
     public class HomeViewModel
      {
-         public readonly List<MovieDto> movies;
 
-    //     [DisplayFormat(DataFormatString ="{0:N0} st")]
-    //     [DisplayName("Totalt bekräftade fall")]
-    //     public int TotalConfirmed { get;  }
+         public string[] movieTitle = new string[6];
+         public string[] moviePoster = new string[6];
+         public string[] moviePlot = new string[6];
+         public string[] movieDirector = new string[6];
+         public string[] movieActors = new string[6];
 
-    //     [DisplayFormat(DataFormatString ="{0:N0} st")]
-    //     [DisplayName("Totalt bekräftade fall i Sverige")]
-    //     public int TotalConfirmedSweden { get;  }
-    //     public int ERik { get; set; }
+        public MovieDto[] movies = new MovieDto[6];
 
-        public HomeViewModel(MovieDto movie)
+        public HomeViewModel(MovieDto[] movies)
         {
+
+            movieTitle[0] = movies[0].Title;
+            moviePoster[0] = movies[0].Poster;
+            moviePlot[0] = movies[0].Plot;
+            movieDirector[0] = movies[0].Director;
+            movieActors[0] = movies[0].Actors;
+
             // TotalConfirmed = summary.Global.TotalConfirmed;
             // var query = summary.Countries
             // .Where(x => x.Slug=="sweden")
@@ -31,10 +36,6 @@ namespace CMDb___project.Models.ViewModels
             // TotalConfirmedSweden = query.TotalConfirmed;
 
 
-        }
-        public HomeViewModel()
-        {
-            
         }
     }
 }

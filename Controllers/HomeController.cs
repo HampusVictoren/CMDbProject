@@ -14,7 +14,6 @@ namespace CMDb___project.Controllers
     public class HomeController : Controller
     {
             private IRepository repository;
-
             public HomeController(IRepository repository)
         {
             this.repository = repository;
@@ -23,27 +22,21 @@ namespace CMDb___project.Controllers
         //Eventuellt i egen mapp senare
          public async Task<IActionResult> Index()
         {
-            var tasks = new List<Task>();
             GetMovieDto[] cmdbmovies;
             MovieDto[] omdbmovies = new MovieDto[6];
             cmdbmovies = await repository.GetCmdbMoviesAsync();
-            for (int i = 0; i < cmdbmovies.Length; i++)
+            for (int i = 0; i < cmdbmovies.Length-1; i++)
             {
-            Task.Run(
-                async() =>
-            {
-              string movieid = cmdbmovies[i].imdbID;
-              omdbmovies[i] = repository.GetOmdbMoviesAsync(movieid);
+                await Task.Run(
+                    async() =>
+                    {
+                        string movieid = cmdbmovies[i].imdbID;
+                        omdbmovies[i] = await repository.GetOmdbMoviesAsync(movieid);
+                    }
+                );
             }
-            );
-            
-            }
-            
-            
 
-
-
-          return View();
+        return View(omdbmovies);
         }
 
         public IActionResult Details()
@@ -56,9 +49,5 @@ namespace CMDb___project.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        
-
-
     }
 }

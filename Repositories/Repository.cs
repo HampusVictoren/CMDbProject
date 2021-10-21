@@ -24,7 +24,7 @@ namespace CMDb___project.Repositories
 
 public async Task<MovieDto> GetOmdbMoviesAsync(string movieId)
         {
-            var result = await apiClient.GetAsync<MovieDto>(cmdbBaseEndpoint + movieId);
+            var result = await apiClient.GetAsync<MovieDto>(omdbBaseEndpoint + movieId);
             return result;
         }
 

@@ -1,4 +1,4 @@
-﻿@* @model List<HomeViewModel> *@
+﻿@model CMDb___project.Models.ViewModels.HomeViewModel
 
 @{
     ViewData["Title"] = "Home";
@@ -8,17 +8,17 @@
 <div class="topmovie">
     <div class="topmoviecontainer">
         <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
-            <img class="topmovieposter" src="@Model[0].Poster" />
+            <img class="topmovieposter" src="@Html.DisplayFor(model => model.Poster[0])" />
         </a>
         <div class="topmovietext">
             <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
                 <h3>
-                    @Model[0].Title
+                    @Html.DisplayFor(model => model.Title[0])
                 </h3>
             </a>
-            <p class="plot">@Model[0].Plot</p>
-            <p class="actors">Actors: @Model[0].Actors</p>
-            <p class="director">Director: @Model[0].Director</p>
+            <p class="plot">@Html.DisplayFor(model => model.Plot[0])</p>
+            <p class="actors">Actors: @Html.DisplayFor(model => model.Actors[0])</p>
+            <p class="director">Director: @Html.DisplayFor(model => model.Director[0])</p>
         </div>
 </div>
     <div class="topmovieratings">
@@ -51,7 +51,7 @@
 
 <h5>2nd - 4th</h5>
     
-    <div class="top10">
+    @* <div class="top10">
         <div class="top10movie">
             <img class="top10poster" src="@Model[1].Poster" />
             <div class="top10text">
@@ -89,5 +89,5 @@
                     <div class="imdbicon"></div> @Model[3].IMDbRating
                 </div>
             </div>
-        </div>
+        </div> *@
     </div>
