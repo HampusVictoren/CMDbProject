@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CMDb___project.Infrastructure;
+using CMDb___project.Repositories;
 
 namespace CMDb___project
 {
@@ -23,6 +25,8 @@ namespace CMDb___project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IApiClient, ApiClient>();
             services.AddControllersWithViews();
         }
 

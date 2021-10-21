@@ -1,6 +1,6 @@
 using System;
 
-namespace CMDb___project.Models
+namespace CMDb___project.Models.ViewModels
 {
     public class ErrorViewModel
     {

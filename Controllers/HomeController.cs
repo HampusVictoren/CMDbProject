@@ -1,4 +1,6 @@
-﻿using CMDb___project.Models;
+﻿using CMDb___project.Models.ViewModels;
+using CMDb___project.Models.Dtos;
+using CMDb___project.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,22 +13,37 @@ namespace CMDb___project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+            private IRepository repository;
 
-        public HomeController(ILogger<HomeController> logger)
+            public HomeController(IRepository repository)
         {
-            _logger = logger;
+            this.repository = repository;
         }
 
-        public IActionResult Index()
+        //Eventuellt i egen mapp senare
+         public async Task<IActionResult> Index()
         {
-            MovieViewModel movieViewModel = new MovieViewModel();
+            var tasks = new List<Task>();
+            GetMovieDto[] cmdbmovies;
+            MovieDto[] omdbmovies = new MovieDto[6];
+            cmdbmovies = await repository.GetCmdbMoviesAsync();
+            for (int i = 0; i < cmdbmovies.Length; i++)
+            {
+            Task.Run(
+                async() =>
+            {
+              string movieid = cmdbmovies[i].imdbID;
+              omdbmovies[i] = repository.GetOmdbMoviesAsync(movieid);
+            }
+            );
+            
+            }
+            
+            
 
-            var movies = movieViewModel.GetMovieList();
 
-            ViewData["movies"] = movies;
 
-            return View(movies);
+          return View();
         }
 
         public IActionResult Details()
@@ -39,5 +56,9 @@ namespace CMDb___project.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
+
+
     }
 }
