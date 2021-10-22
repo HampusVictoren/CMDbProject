@@ -146,7 +146,7 @@ form {
 
 .mobilesearch {
     width: 100%;
-    height: 60px;
+    height: 40px;
     background: black;
     position: absolute;
     top: 0;
@@ -272,14 +272,30 @@ form {
     border-radius: 15px;
 }
 
+.top10expanded {
+    height: auto;
+}
+
 .top10poster {
-    height: 100%;
-    width: 100%;
+    width: 150px;
+    height: auto;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
     background: url('https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.plotp {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plotexpanded {
+    width: 200px;
+    height: auto;
 }
 
 .top10text {
@@ -309,16 +325,32 @@ footer {
     background-size: contain;
 }
 
+.rottenicon {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px 0 20px;
+    background: url(../Images/rotten.svg);
+    background-size: contain;
+}
+
 
 @media screen and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
     .main{
         width: 95vw;
     }
     .topmovie{
         width: 100%;
     }
-
-    .top10{
+    .plotp {
+        width: 180px;
+    }
+    .plotexpanded {
+        width: 180px;
+    }
+    .top10 {
         width: 100%;
     }
 
@@ -334,6 +366,15 @@ footer {
 }
 
 @media screen and (max-width:900px){
+    body {
+        font-size: 14px;
+    }
+    .plotp {
+        width: 160px;
+    }
+    .plotexpanded {
+        width: 160px;
+    }
     h2 {
         margin-top: 0;
     }
@@ -341,7 +382,9 @@ footer {
     .top10movie {
         width: 290px;
         height: 170px
- 
+    }
+    .top10poster {
+        width: 100px;
     }
    
     .top10text p {
@@ -357,6 +400,9 @@ footer {
    
 }
 @media screen and (max-width:600px) {
+    body {
+        font-size: 12px;
+    }
     .maincontainer {
         width: 100vw;
     }
@@ -384,12 +430,15 @@ footer {
 
 }
 @media screen and (max-width:440px) {
+        body {
+            font-size: 10px;
+        }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
 
         h5 {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
         }
 
         .actors {

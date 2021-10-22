@@ -8,17 +8,17 @@
 <div class="topmovie">
     <div class="topmoviecontainer">
         <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
-            <img class="topmovieposter" src="@Html.DisplayFor(model => model.Poster[0])" />
+            <img class="topmovieposter" src="@Html.DisplayFor(model => model.omdbmovies[0].Poster)" />
         </a>
         <div class="topmovietext">
             <a class="linkdetails" asp-area="" asp-controller="Home" asp-action="Details">
                 <h3>
-                    @Html.DisplayFor(model => model.Title[0])
+                    @Html.DisplayFor(model => model.omdbmovies[0].Title)
                 </h3>
             </a>
-            <p class="plot">@Html.DisplayFor(model => model.Plot[0])</p>
-            <p class="actors">Actors: @Html.DisplayFor(model => model.Actors[0])</p>
-            <p class="director">Director: @Html.DisplayFor(model => model.Director[0])</p>
+            <p class="plot">@Html.DisplayFor(model => model.omdbmovies[0].Plot)</p>
+            <p class="actors">Actors: @Html.DisplayFor(model => model.omdbmovies[0].Actors)</p>
+            <p class="director">Director: @Html.DisplayFor(model => model.omdbmovies[0].Director)</p>
         </div>
 </div>
     <div class="topmovieratings">
@@ -28,7 +28,7 @@
                    <div class="imdbicon"></div>
                 </td>
                 <td>
-                    <div class="imdbicon"></div>
+                    <div class="rottenicon"></div>
                 </td>
                 <td>
                     <div class="imdbicon"></div>
@@ -36,13 +36,13 @@
             </tr>
             <tr>
                 <td>
-                    8.3
+                    @Html.DisplayFor(model => model.omdbmovies[0].Ratings[0].Value)
                 </td>
                 <td>
-                    8.0
+                    @Html.DisplayFor(model => model.omdbmovies[0].Ratings[1].Value)
                 </td>
                 <td>
-                    8.4
+                    @Html.DisplayFor(model => model.omdbmovies[0].Ratings[2].Value)
                 </td>
             </tr>
         </table>
@@ -51,43 +51,46 @@
 
 <h5>2nd - 4th</h5>
     
-    @* <div class="top10">
+     <div class="top10">
         <div class="top10movie">
-            <img class="top10poster" src="@Model[1].Poster" />
+            <img class="top10poster" src="@Html.DisplayFor(model => model.omdbmovies[1].Poster)" />
             <div class="top10text">
-                <h4>@Model[1].Title</h4>
-                <p>
-                    @Model[1].Plot
+                <h4>@Html.DisplayFor(model => model.omdbmovies[1].Title)</h4>
+                <p class="plotp">
+                    @Html.DisplayFor(model => model.omdbmovies[1].Plot) ...
                 </p>
+                <a href="#">Read more</a>
                 <div class="top10rating">
-                    <div class="imdbicon"></div> @Model[1].IMDbRating
+                    <div class="imdbicon"></div> @Html.DisplayFor(model => model.omdbmovies[1].Ratings[0].Value)
                 </div>
             </div>
         </div>
 
         <div class="top10movie">
-            <img class="top10poster" src="@Model[2].Poster" />
+            <img class="top10poster" src="@Html.DisplayFor(model => model.omdbmovies[2].Poster)" />
             <div class="top10text">
-                <h4>@Model[2].Title</h4>
-                <p>
-                    @Model[2].Plot
+                <h4>@Html.DisplayFor(model => model.omdbmovies[2].Title)</h4>
+                <p class="plotp">
+                    @Html.DisplayFor(model => model.omdbmovies[2].Plot) ...
                 </p>
+                <a href="#">Read more</a>
                 <div class="top10rating">
-                    <div class="imdbicon"></div> @Model[2].IMDbRating
+                    <div class="imdbicon"></div> @Html.DisplayFor(model => model.omdbmovies[2].Ratings[0].Value)
                 </div>
             </div>
         </div>
 
-        <div class="top10movie">
-            <img class="top10poster" src="@Model[3].Poster" />
-            <div class="top10text">
-                <h4>@Model[3].Title</h4>
-                <p>
-                    @Model[3].Plot
-                </p>
-                <div class="top10rating">
-                    <div class="imdbicon"></div> @Model[3].IMDbRating
+            <div class="top10movie">
+                <img class="top10poster" src="@Html.DisplayFor(model => model.omdbmovies[3].Poster)" />
+                <div class="top10text">
+                    <h4>@Html.DisplayFor(model => model.omdbmovies[3].Title)</h4>
+                    <p class="plotp">
+                        @Html.DisplayFor(model => model.omdbmovies[3].Plot) ...
+                    </p>
+                    <a href="javascript:void(0)" onclick="readMore(3)">Read more</a>
+                    <div class="top10rating">
+                        <div class="imdbicon"></div> @Html.DisplayFor(model => model.omdbmovies[3].Ratings[0].Value)
+                    </div>
                 </div>
             </div>
-        </div> *@
-    </div>
+     </div>
