@@ -22,30 +22,14 @@ namespace CMDb___project.Controllers
         //Eventuellt i egen mapp senare
          public async Task<IActionResult> Index()
         {
-            GetMovieDto[] cmdbmovies;
-            MovieDto[] omdbmovies = new MovieDto[4];
-            cmdbmovies = await repository.GetCmdbMoviesAsync();
-
-            for (int i = 0; i < omdbmovies.Length; i++)
-            {
-                await Task.Run(
-                    async() =>
-                    {
-                        string movieid = cmdbmovies[i].imdbID;
-                        omdbmovies[i] = await repository.GetOmdbMoviesAsync(movieid);
-                        omdbmovies[i].PlotTrimmed = omdbmovies[i].Plot.Substring(0, 40);
-                    }
-                );
-            }
-
-            var model = new HomeViewModel(omdbmovies);
-        return View(model);
+            var model = new HomeViewModel(await repository.GetMoviesAsync());
+            return View(model);
         }
 
-        public IActionResult Details()
+        public IActionResult Details(string imdbid)
         {
-            
-            return View();
+            var model = new DetailsViewModel(repository.GetMovieDetails(imdbid));
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

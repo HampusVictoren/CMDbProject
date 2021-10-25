@@ -13,8 +13,12 @@ namespace CMDb___project.Repositories
         /// Retrieves a Movie
         /// </Movie>
         /// <returns></returns>
+        /// 
+        Task<MovieDto[]> GetMoviesAsync();
         Task<GetMovieDto[]> GetCmdbMoviesAsync();
         Task<MovieDto> GetOmdbMoviesAsync(string movieId);
+
+        MovieDto GetMovieDetails(string imdbid);
         //Task<IEnumerable<MovieDto>> GetMovie(string id);
     }
 }
