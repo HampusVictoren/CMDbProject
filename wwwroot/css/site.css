@@ -195,7 +195,8 @@ form {
 .linkdetails {
     margin: 0;
     padding: 0;
-    }
+}
+
 .topmovie {
     display: flex;
     flex-direction: column;
@@ -229,6 +230,10 @@ form {
     margin-right: 5px;
 }
 
+.plot, .director {
+    color: antiquewhite;
+}
+
 .topmovieratings {
     display: flex;
     flex-direction: row;
@@ -248,9 +253,6 @@ form {
         text-align: center;
         padding: 0 10px 0 10px
 }
-
-
-
 
 .top10 {
     display: flex;
@@ -272,30 +274,19 @@ form {
     border-radius: 15px;
 }
 
-.top10expanded {
-    height: auto;
-}
-
 .top10poster {
     width: 150px;
-    height: auto;
+    height: 220px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    background: url('https://m.media-amazon.com/images/M/MV5BN2Y5ZTU4YjctMDRmMC00MTg4LWE1M2MtMjk4MzVmOTE4YjkzXkEyXkFqcGdeQXVyNTc1NTQxODI@._V1_SX300.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 .plotp {
     width: 200px;
+    height: auto;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.plotexpanded {
-    width: 200px;
-    height: auto;
 }
 
 .top10text {
@@ -309,12 +300,24 @@ form {
     flex-direction: row;
     align-items: center;
     padding-left: 20px;
+    margin-top: 20px;
 }
+
+.readmore {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+.readmore:hover {
+    color: lightgray;
+    text-decoration: none;
+}
+
 
 footer {
     margin: 20px 5px 0 20px;
     font-size: 1rem;
-
 }
 
 .imdbicon {
@@ -330,6 +333,14 @@ footer {
     height: 60px;
     margin: 0 20px 0 20px;
     background: url(../Images/rotten.svg);
+    background-size: contain;
+}
+
+.metaicon {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px 0 20px;
+    background: url(../Images/meta.svg);
     background-size: contain;
 }
 
@@ -385,6 +396,7 @@ footer {
     }
     .top10poster {
         width: 100px;
+        height: 150px;
     }
    
     .top10text p {

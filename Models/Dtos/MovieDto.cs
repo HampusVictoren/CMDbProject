@@ -11,6 +11,8 @@ namespace CMDb___project.Models.Dtos
         public int Year { get; set; }
         public string Actors { get; set; }
         public string Director { get; set; }
+        public string Runtime { get; set; }
+        public string Genre { get; set; }
         public RatingDto[] Ratings { get; set; }
         public double CMDbRating { get; set; }
     }

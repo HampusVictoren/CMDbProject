@@ -16,13 +16,20 @@ function readMore(id) {
     id = id - 1;
     let selectedMovies = document.getElementsByClassName("top10movie");
     let plots = document.getElementsByClassName("plotp");
+    let text = document.getElementsByClassName("readmore");
     
-    if (selectedMovies[id].className != "top10movie") {
-        selectedMovies[id].classList.toggle("top10movie");
-        plots[id].classList.toggle("plotp");
+    if (plots[id].style.overflow === "visible") {
+        plots[id].style.overflow = "hidden";
+        plots[id].style.whiteSpace = "nowrap";
+        plots[id].style.textOverflow = "ellipsis";
+        selectedMovies[id].style.height = "226px";
+        text[id].innerHTML = "Read more";
     }
     else {
-        selectedMovies[id].classList.toggle("top10expanded");
-        plots[id].classList.toggle("plotexpanded");
+        plots[id].style.overflow = "visible";
+        selectedMovies[id].style.height = "auto";
+        plots[id].style.whiteSpace = "normal";
+        plots[id].style.textOverflow = "clip";
+        text[id].innerHTML = "Read less";
     }
 }
