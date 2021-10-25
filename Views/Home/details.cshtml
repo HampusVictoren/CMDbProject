@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>TOP MOVIE</h2>
+<h2>About Movie</h2>
 <div class="topmovie">
     <div class="topmoviecontainer">
         <img src="@Html.DisplayFor(model => model.movie.Poster)" class="topmovieposter" />
@@ -16,19 +16,42 @@
             <p class="plot">@Html.DisplayFor(model => model.movie.Plot)</p>
             <p class="actors">@Html.DisplayFor(model => model.movie.Actors)</p>
             <p class="director">@Html.DisplayFor(model => model.movie.Director)</p>
+            <p class="runtime">@Html.DisplayFor(model => model.movie.Runtime)</p>
         </div>
     </div>
     <div class="topmovieratings">
         <table>
             <tr>
                 <td>
-                    <div class="imdbicon"></div>
+                    <img src="~/Images/like.svg" class="likebutton" />
                 </td>
+                <td></td>
+                <td>
+                    <a href="javascript:void(0)" onclick="dislike();">
+                        <img src="~/Images/like.svg" class="dislikebutton" />
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   5 
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    3
+                </td>
+            </tr>
+            <tr>
                 <td>
                     <div class="imdbicon"></div>
                 </td>
                 <td>
-                    <div class="imdbicon"></div>
+                    <div class="rottenicon"></div>
+                </td>
+                <td>
+                    <div class="metaicon"></div>
                 </td>
             </tr>
             <tr>
