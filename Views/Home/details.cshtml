@@ -10,12 +10,12 @@
         <img src="@Html.DisplayFor(model => model.movie.Poster)" class="topmovieposter" />
         <div class="topmovietext">
             <h3>
-                @Html.DisplayFor(model => model.movie.Title)
+                @Html.DisplayFor(model => model.movie.Title) (@Html.DisplayFor(model => model.movie.Year))
             </h3>
-            <p class="plot">"A FedEx executive undergoes a physical and emotional transformation after crash landing on a deserted island."</p>
-            <p class="actors">Actors: Tom Hanks, Helen Hunt, Paul Sanchez</p>
-            <p class="director">Director: Robert Zemeckis</p>
-
+            <p class="genre">@Html.DisplayFor(model => model.movie.Genre)</p>
+            <p class="plot">@Html.DisplayFor(model => model.movie.Plot)</p>
+            <p class="actors">@Html.DisplayFor(model => model.movie.Actors)</p>
+            <p class="director">@Html.DisplayFor(model => model.movie.Director)</p>
         </div>
     </div>
     <div class="topmovieratings">
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>
-                    8.3
+                    5.5
                 </td>
                 <td>
                     8.0

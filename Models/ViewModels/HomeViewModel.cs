@@ -10,7 +10,7 @@ namespace CMDb___project.Models.ViewModels
 {
     public class HomeViewModel
      {
-        public MovieDto[] omdbmovies = new MovieDto[4];
+        public MovieDto[] omdbmovies {get; set;}
 
         public HomeViewModel(MovieDto[] movies)
         {

@@ -26,9 +26,9 @@ namespace CMDb___project.Controllers
             return View(model);
         }
 
-        public IActionResult Details(string imdbid)
+        public async Task<IActionResult> Details(string imdbid)
         {
-            var model = new DetailsViewModel(repository.GetMovieDetails(imdbid));
+            var model = new DetailsViewModel(await repository.GetMovieDetails(imdbid));
             return View(model);
         }
 

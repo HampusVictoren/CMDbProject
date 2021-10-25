@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CMDb___project.Controllers;
+using CMDb___project.Models.ViewModels;
 
 namespace CMDb___project.Repositories
 {
@@ -13,7 +14,6 @@ namespace CMDb___project.Repositories
         private readonly IApiClient apiClient;
         private readonly string omdbBaseEndpoint = "http://www.omdbapi.com/?apikey=c945b2b0&i=";
         private readonly string cmdbBaseEndpoint = "https://grupp9.dsvkurs.miun.se/api/Toplist";
-        public MovieDto[] omdbmovies { get; set; }
         
         public Repository(IApiClient apiClient)
         {
@@ -23,7 +23,7 @@ namespace CMDb___project.Repositories
         public async Task<MovieDto[]> GetMoviesAsync()
         {
             GetMovieDto[] cmdbmovies;
-            omdbmovies = new MovieDto[4];
+            MovieDto[] omdbmovies = new MovieDto[4];
             cmdbmovies = await GetCmdbMoviesAsync();
 
             for (int i = 0; i < omdbmovies.Length; i++)
@@ -54,16 +54,10 @@ namespace CMDb___project.Repositories
             return result;
         }
 
-        public MovieDto GetMovieDetails(string imdbid)
+        public async Task<MovieDto> GetMovieDetails(string imdbid)
         {
-            for (int i = 0; i < omdbmovies.Length; i++)
-            {
-                if (omdbmovies[i].imdbID == imdbid)
-                {
-                    return omdbmovies[i];
-                }
-            }
-            return null;
+            var result = await apiClient.GetAsync<MovieDto>(omdbBaseEndpoint + imdbid);
+            return result;
         }
     }
 }
